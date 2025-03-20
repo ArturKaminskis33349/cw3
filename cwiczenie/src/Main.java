@@ -59,7 +59,7 @@ public class Main {
         sklep.wyswietlProduktyWKategorii("Mysz");
 
         sklep.zmienStatusZamowienia(zamowienie1.getId(), "Zrealizowane");
-        System.out.println("\nStatus zamówienia po aktualizacji: ");
+        System.out.println("\nStatus zamówienia po aktualizcji: ");
         zamowienie1.wyswietlSzczegoly();
     }
 }
