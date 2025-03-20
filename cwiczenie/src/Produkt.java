@@ -45,7 +45,7 @@ public class Produkt {
         this.kategoria = kategoria;
     }
 
-    public void wyswietlInformacje(){
-        System.out.println("Id: "+id+", Nazwa: "+nazwa+", Cena: "+cena+", IloscWMagazynie: "+iloscWMagazynie);
+    public void wyswietlInformacje() {
+        System.out.println("Id: " + id + ", Nazwa: " + nazwa + ", Cena: " + cena + ", IloscWMagazynie: " + iloscWMagazynie);
     }
 }

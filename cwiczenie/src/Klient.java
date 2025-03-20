@@ -46,7 +46,7 @@ public class Klient {
         this.imie = imie;
     }
 
-    public void wyswietlInformacje(){
-        System.out.println("Id: "+id+" Imie: "+imie+" Nazwisko: "+nazwisko+" Email: "+email+" CzyStaly: "+czyStaly);
+    public void wyswietlInformacje() {
+        System.out.println("Id: " + id + " Imie: " + imie + " Nazwisko: " + nazwisko + " Email: " + email + " CzyStaly: " + czyStaly);
     }
 }

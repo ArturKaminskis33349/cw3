@@ -63,18 +63,25 @@ public class Zamowienie {
         this.wartosc = wartosc;
     }
 
-    public void obliczWartoscZamowienia(){
-        for(int i = 0; i<produkty.length; i++){
-            wartosc = produkty[i].getCena()*ilosc[i];
+    public void obliczWartoscZamowienia() {
+        for (int x = 0; x < produkty.length; x++) {
+            if (produkty[x] != null) {
+                wartosc += produkty[x].getCena() * ilosc[x];
+            }
         }
     }
-    public void zastosujZnizke(){
-        if(klient.isCzyStaly()){
+
+    public void zastosujZnizke() {
+        if (klient.isCzyStaly()) {
             wartosc *= 0.9;
         }
     }
 
-    public void wyswietlSzczegoly(){
-        System.out.println("Id: "+id+", klient: "+klient+", produkty: "+produkty.length+", ilosc: "+ilosc.length+", data: "+dataZamowienia+", status: "+status+", wartosc: "+wartosc);
+    public void wyswietlSzczegoly() {
+        int ile = 0;
+        for (int x = 0; x < ilosc.length; x++) {
+            ile += ilosc[x];
+        }
+        System.out.println("Id: " + id + ", klient: " + klient.getImie() + " " + klient.getNazwisko() + ", produkty: " + produkty.length + ", ilosc: " + ile + ", data: " + dataZamowienia + ", status: " + status + ", wartosc: " + wartosc);
     }
 }

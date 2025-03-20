@@ -44,14 +44,18 @@ public class Main {
         sklep.dodajKlienta(klient1);
         sklep.dodajKlienta(klient2);
 
+        System.out.println("\nInformacje o klientach: ");
+        klient1.wyswietlInformacje();
+        klient2.wyswietlInformacje();
+
         Produkt[] produktyZamowienia1 = {produkt1, produkt2};
-        int[] ilosciZamowienia1 = {1, 1};
+        int[] ilosciZamowienia1 = {1, 4};
 
         Zamowienie zamowienie1 = sklep.utworzZamowienie(klient1, produktyZamowienia1, ilosciZamowienia1);
         zamowienie1.zastosujZnizke();
         sklep.aktualizujStanMagaynowy(zamowienie1);
 
-        System.out.println("Informacje o zamowieniu: ");
+        System.out.println("\nInformacje o zamowieniu: ");
         zamowienie1.wyswietlSzczegoly();
 
         System.out.println("\nStan magazynowy po zamówieniu: ");
@@ -61,5 +65,20 @@ public class Main {
         sklep.zmienStatusZamowienia(zamowienie1.getId(), "Zrealizowane");
         System.out.println("\nStatus zamówienia po aktualizcji: ");
         zamowienie1.wyswietlSzczegoly();
+
+        Produkt[] produktyZamowienia2 = {produkt3, produkt2};
+        int[] iloscZamowienia2 = {2, 1};
+
+        Zamowienie zamowienie2 = sklep.utworzZamowienie(klient2, produktyZamowienia2, iloscZamowienia2);
+        sklep.aktualizujStanMagaynowy(zamowienie2);
+
+        System.out.println("\nZamówienie klienta Jan Kowalski: ");
+        sklep.wyswietlZamowieniaKlienta(1);
+
+        System.out.println("\nZamówienie klienta Anna Nowak: ");
+        sklep.wyswietlZamowieniaKlienta(2);
+
+        System.out.println("\nProdukty w kategorii Mysz:");
+        sklep.wyswietlProduktyWKategorii("Mysz");
     }
 }
